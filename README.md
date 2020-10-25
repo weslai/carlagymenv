@@ -8,9 +8,9 @@ Please go to [Carla Simulator](https://github.com/carla-simulator/carla) Website
 For this repository, the version **Carla 0.9.9.4** is used. 
 
 - Unpack the Download .tar.gz File 
-- '''chmod +x CarlaUE4.sh''' 
-- Get some try with the codes under '''/PythonAPI/examples''' 
-- '''/PythonAPI/codes/egovehicle_radius.py''' is the code, which should work for our need. 
+- ```chmod +x CarlaUE4.sh``` 
+- Get some try with the codes under ```/PythonAPI/examples``` 
+- ```/PythonAPI/codes/egovehicle_radius.py``` is the code, which should work for our need. 
 
 How to run Carla 
 ----------------
