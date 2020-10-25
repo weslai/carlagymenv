@@ -17,51 +17,51 @@ How to run Carla
 
 Launch a terminal in this folder and execute the simulator by running 
 
-'''sh
+```sh
  ./CarlaUE4.sh
-'''
+```
 
 This will launch a window with a view over the city. This is the view, you can fly around the city using the mouse and WASD keys. 
 This simulator acts now as a server, waiting for a client to connect and interact. 
 
 Try an example to interact with the server 
 
-'''sh
+```sh
  ./spawn_npc.py -80
-'''
+```
 
 This should launch 80 Vehicles into the simulator. 
 
 Try also manual control the vehicle by running 
 
-'''sh
+```sh
  ./manual_control.py
-'''
+```
 
 Now we can test '''egovehicle_radius.py''' with Town04 by running 
 
-'''sh
+```sh
  ./egovehicle_radius.sh 
-'''
+```
 
 ### Gym Environment 
 Please go to [gym github website](https://github.com/openai/gym) Website to clone openai gym 
 ***Gym environment here clone to the folder /PythonAPI/codes/ inside the carla*** 
 
-'''
+```
 git clone https://github.com/openai/gym 
-'''
+```
 
 Now go inside the gym folder under /gym/envs/, create a new folder **carla** for the carla gym environment 
 For the Carla Environment, they should two files unter the folder **carla**, **__init__.py** and **carla_env** 
 
 the file /gym/envs/carla/__init__.py should have: 
-'''
+```
 from gym.envs.carla.carla_env import CarlaEnv
-'''
+```
 
 And also /gym/envs/__init__.py should have:  
-'''
+```
 register(
     id='carla-v0',
     entry_point='gym.envs.carla:CarlaEnv',
@@ -74,24 +74,24 @@ register(
     kwargs = {'host':'127.0.0.1', 'port': 2000, 'tm_p': 8000, 'filtervehicle':'vehicle.*', 'coord_file': 'map04_coordination_1.csv',
               'map_name':'Town04', 'num_vehicle': 10, 'velocity': 90, 'autopilot': False},
 )
-''' 
+```
 
 Under /gym/ in terminal, by running:
-'''
+```
 pip install -e .
-'''
+```
 This should be run, each time if the environment is changed.
 ### Python Packages 
 Create a Python Conda Environment, by using 
-'''
+```
 conda create --name carlagym 
 conda activate carlagym
-'''
+```
 
 install python packages with /PythonAPI/codes/requirements.txt: 
-'''
+```
 pip install -r requirements.txt
-'''
+```
 ## Hierarchy 
 Under **/codes/simulate/**: 
 egovehicle_radius.py: 
